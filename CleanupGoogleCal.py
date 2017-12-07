@@ -101,7 +101,7 @@ def main():
     now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
     print_list(LIST_OF_RECURRING_EVENTS)
     eventsResult = service.events().list(
-        calendarId='primary', timeMin=now, maxResults=6, singleEvents=True,
+        calendarId='primary', timeMin=now, maxResults=1000, singleEvents=True,
         orderBy='startTime', showDeleted=False).execute()
     events = eventsResult.get('items', [])
 
